@@ -6,11 +6,16 @@ from . import get
 from hoshino import Service, R
 
 async def img(bot, ev, msg, uid):
-    if os.path.exists("{YOURDIR}/res/img/image-generate/image/"+str(uid)+".jpg"):
-        os.remove("{YOURDIR}/res/img/image-generate/image/"+str(uid)+".jpg")
+
+    image_path = R.img(f'image-generate/image/{uid}.jpg').path
+    if os.path.exists(image_path):
+        os.remove(image_path)
     file = await get.getQqName(uid)
     color = await get.getIni(file,"color")
-    img = Image.open("{YOURDIR}/res/img/image-generate/image_data/"+file+"/"+str(await get.getIni(file,"name"))+".jpg")
+    ini = str(await get.getIni(file,"name"))
+    image_path_new = R.img(f'image-generate/image_data/{file}/{ini}.jpg').path
+
+    img = Image.open(image_path_new)
     draw = ImageDraw.Draw(img)
     font_size=await get.getIni(file,"font_size")
     font_max=await get.getIni(file,"font_max")
@@ -28,5 +33,5 @@ async def img(bot, ev, msg, uid):
     if font_length[0]>5:
         draw.text((image_font_center[0]-font_length[0]/2, image_font_center[1]-font_length[1]/2),
                     msg, fill=color,font=ttfront)
-        img.save("{YOURDIR}/res/img/image-generate/image/"+str(uid)+".jpg")
+        img.save(image_path)
         await bot.send(ev, R.img(f'image-generate/image/{uid}.jpg').cqcode, at_sender=True)
