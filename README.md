@@ -16,7 +16,7 @@
 
 4. 替换`get.py`以及`main.py`文件中的`{YOURDIR}`为你本机所对应路径
 
-5. 在`config/__bot__.py`文件中的`MODULES_ON`里添加一行`'image'`,以启用本插件
+5. 在`config/__bot__.py`文件中的`MODULES_ON`里添加一行`'image-generate'`,以启用本插件
 
 6. 如果出现字体缺失的情况,请自行安装目录下ttf格式的字体
 
