@@ -1,6 +1,6 @@
 # 表情包生成器 For HoshinoV2
 
-本插件修改自[fz6m](https://github.com/fz6m/)所编写的的NoneBot插件[CQimage](https://github.com/fz6m/nonebot-plugin/tree/master/CQimage),对HoshinoBotV2进行了适配并做了些微改动
+本插件修改自[fz6m](https://github.com/fz6m/)所编写的的NoneBot插件[CQimage](https://github.com/fz6m/nonebot-plugin/tree/master/CQimage), 对HoshinoBotV2进行了适配并做了些微改动. 
 
 ## 开始使用
 
@@ -8,17 +8,23 @@
     ```
     git clone https://github.com/pcrbot/image-generate.git`
     ```
-2. 安装依赖, 如下载过慢建议清华镜像:
+2. 安装依赖, 如下载过慢建议清华镜像, 一般来说只要你成功安装了HoshinoBot便可以略过此步:
     ```
    pip install -r ./requirements.txt
     ```
-3. 将`image-generate`文件夹移动至HoshinoBot的`res/img/`目录下
+3. 将`image-generate`文件夹移动至HoshinoBot的`res/img/`目录下,正确的目录结构:
+   ```
+   res
+   |--img
+       |--image-generate
+           |--image_data
+           |--image
+   ```
 
-4. 替换`get.py`以及`main.py`文件中的`{YOURDIR}`为你本机所对应路径
 
-5. 在`config/__bot__.py`文件中的`MODULES_ON`里添加一行`'image-generate'`,以启用本插件
+4. 在`config/__bot__.py`文件中的`MODULES_ON`里添加一行`'image-generate'`,以启用本插件
 
-6. 如果出现字体缺失的情况,请自行安装目录下ttf格式的字体
+5. 如果出现字体缺失的情况,请自行安装目录下ttf格式的字体
 
 ## 指令示例
 
