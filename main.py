@@ -26,7 +26,7 @@ async def img(bot, ev, msg, uid):
     #print(font_length)
     while font_length[0]>font_max:
         font_size-=image_font_sub
-        ttfront = ImageFont.truetype('simhei.ttf', font_size)
+        ttfront = ImageFont.truetype(os.path.join(os.path.dirname(__file__), 'simhei.ttf'), font_size)
         font_length = ttfront.getsize(msg)
     #print(ttfront.getsize("你好"))
     # 自定义打印的文字和文字的位置
